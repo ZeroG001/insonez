@@ -1,0 +1,64 @@
+body { padding-top: 70px; }
+
+
+/* ------------------ INDEX.HTML ------------------ */
+
+
+/* Header & Navigation
+----------------------------*/
+
+
+
+/* Banner Image
+----------------------------*/
+.banner-image {
+	display: block;
+	position: relative;
+	height: 400px;
+	width: 100%;
+
+	background-image: url('http://placehold.it/1000x500');
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	box-sizing: border-box;
+}
+
+
+.banner-content-box-one,
+.banner-content-box-two,
+.banner-content-box-three {
+	background-color: rgba(100,100,100,0.4);
+	box-sizing: border-box;
+	padding: 20px;
+	display: inline-block;
+	position: absolute;
+}
+
+.banner-content-box-one {
+	top: 0;
+	left: 0;
+	height: 70px;
+	width: 200px;
+}
+
+.banner-content-box-two {
+	left: 10%;
+	top: 100px;
+}
+
+.banner-content-box-three {
+	right: 0;
+	bottom: 0; 
+}
+
+
+
+
+/* Media Queries
+----------------------------*/
+
+@media screen and (min-width: 728px) {
+/* This will be applied after 728px */
+
+}
