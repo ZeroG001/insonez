@@ -1,11 +1,40 @@
-body { padding-top: 70px; }
+body { padding-top: 101px; }
 
 
 /* ------------------ INDEX.HTML ------------------ */
 
 
+/* Bootstrap Override Styles 
+---------------------------- */
+.container-fluid.fluid-custom {
+	max-width: 1200px;
+	margin: 0px auto;
+}
+
+
 /* Header & Navigation
-----------------------------*/
+---------------------------- */
+
+.navbar-header {
+	padding: 20px 0px 20px 20px;
+}
+
+.navbar-brand {
+	background-image: url('../img/insone_small.png');
+	background-size: 200px 60px;
+	background-repeat: no-repeat;
+
+	/*border: 1px solid black;*/
+	width: 200px;
+}
+
+.navbar-nav {
+	padding: 0;
+}
+
+.navbar-nav li a {
+	padding: 40px 20px;
+}
 
 
 
@@ -14,12 +43,13 @@ body { padding-top: 70px; }
 .banner-image {
 	display: block;
 	position: relative;
-	height: 400px;
+	height: 650px;
 	width: 100%;
 
-	background-image: url('http://placehold.it/1000x500');
+	background-image: url('http://placehold.it/1100x600');
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center;
 
 	box-sizing: border-box;
 }
@@ -38,16 +68,21 @@ body { padding-top: 70px; }
 .banner-content-box-one {
 	top: 0;
 	left: 0;
-	height: 70px;
-	width: 200px;
+	height: auto;
+	width: 350px;
 }
 
 .banner-content-box-two {
-	left: 10%;
-	top: 100px;
+    left: 15%;
+    top: 215px;
+
+    width: 400px;
+    height: 300px;
 }
 
 .banner-content-box-three {
+	height: auto;
+	width: 350px;
 	right: 0;
 	bottom: 0; 
 }
@@ -58,7 +93,18 @@ body { padding-top: 70px; }
 /* Media Queries
 ----------------------------*/
 
-@media screen and (min-width: 728px) {
+@media screen and (max-width: 784px) {
 /* This will be applied after 728px */
 
+}
+
+@media screen and (max-width: 768px) {
+/* This will be applied before 768px */
+
+
+/* Header & Navigation
+---------------------------- */
+	.navbar-nav li a {
+		padding: 20px 20px;
+	}
 }
