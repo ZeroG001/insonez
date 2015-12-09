@@ -1,0 +1,250 @@
+
+/* Variables
+--------------------------*/
+
+
+	/* Color Scheme
+	-------------------------- */
+$red: red;
+$darkblue: #106FA8;
+$cleardarkblue: rgba(16,111,168, 0.9);
+$lightblue: #3D96CC;
+$orange: #F5AC49;
+$action: #F55818;
+$headertext: #002942;
+
+body { 
+	padding-top: 101px;
+	position: relative;
+	color: $headertext;
+}
+
+
+/* ------------------ INDEX.HTML ------------------ */
+
+
+/* Bootstrap Override Styles 
+---------------------------- */
+.container-fluid.fluid-custom {
+	max-width: 1000px;
+	margin: 0px auto;
+}
+
+
+/* Header & Navigation
+---------------------------- */
+
+.navbar-header {
+	padding: 20px 0px 20px 20px;
+}
+
+.navbar-brand {
+	background-image: url('../img/insone_small.png');
+	background-size: 200px 60px;
+	background-repeat: no-repeat;
+
+	/*border: 1px solid black;*/
+	width: 200px;
+}
+
+
+.navbar-nav {
+
+	padding: 0;
+
+	li a { padding: 40px 20px; }
+}
+
+
+
+/* Banner Image
+----------------------------*/
+.banner-image {
+
+	display: block;
+	position: relative;
+	height: 650px;
+	width: 100%;
+
+	background-image: url('http://placehold.it/1100x600');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	box-sizing: border-box;
+}
+
+
+.banner-content-box-one,
+.banner-content-box-two,
+.banner-content-box-three {
+	background-color: rgba(100,100,100,0.4);
+	box-sizing: border-box;
+	padding: 20px;
+	display: inline-block;
+	position: absolute;
+}
+
+.banner-content-box-one {
+	top: 0;
+	left: 0;
+	height: auto;
+	width: 350px;
+}
+
+.banner-content-box-two {
+    left: 15%;
+    top: 215px;
+
+    width: 400px;
+    height: 300px;
+}
+
+.banner-content-box-three {
+	height: auto;
+	width: 350px;
+	right: 0;
+	bottom: 0; 
+}
+
+
+/* Main Content
+----------------------------*/
+
+
+
+
+.main-content-section {
+	position: relative;
+	padding: 20px 0px;
+	border-bottom: 1px solid gray;
+
+	h2 {
+		margin: 0;
+		padding: 20px 0px;
+	}
+
+	.section-img-left {
+		display: block;
+		border: 1px solid black;
+		width: 70%; 
+		height: 300px;
+		background-image: url('http://placehold.it/300x400');
+		background-size: cover;
+		background-position: center;
+	}
+
+}
+
+/* Section 1
+------------------------ */
+
+
+.contact-call-wrapper {
+
+	display: block;
+	position: relative;
+	width: 400px;
+	height: 400px;
+	margin: 0px auto;
+	overflow: hidden;
+
+
+	.contact-header {
+
+		position: absolute;
+		top: 20px;
+		left: 0;
+		box-sizing: border-box;
+		width:100%;
+		padding: 20px;
+		text-align: center;
+		color: white;
+
+		letter-spacing: 0.2em;
+		color: white;
+		background-color: $cleardarkblue;
+		z-index: 50; /*should always have the highest index */
+
+	}
+
+	.pulse-box-one,
+	.pulse-box-two,
+	.pulse-box-three {
+		position: absolute;
+		border: 1px solid black;
+		border-radius: 50%;
+	}
+
+	.pulse-box-one {
+		width: 300px; height: 300px;
+
+		right: calc(50% - 150px); 
+		bottom: calc(50% - 150px);
+		z-index: 30;
+	}
+
+	.pulse-box-two {
+		width: 200px; height: 200px;
+
+		right: calc(50% - 100px);  
+		bottom: calc(50% - 100px); 
+		z-index: 20;
+	}
+
+	.pulse-box-three {
+		
+		width: 420px; height: 420px;
+
+		right: calc(50% - 210px);  
+		bottom: calc(50% - 210px); 
+		z-index: 10;
+	}
+
+
+	#phone-image {
+		text-align: center;
+		width: 100%;
+		height:100%;
+		padding: 170px;
+		border-radius: 50%;
+	}
+
+
+}
+
+
+/* Section 2
+------------------------ */
+
+
+
+
+
+/* Media Queries
+----------------------------*/
+
+@media screen and (max-width: 784px) {
+/* This will be applied after 728px */
+
+}
+
+@media screen and (max-width: 768px) {
+/* This will be applied before 768px */
+
+
+
+	/* Header & Navigation
+	---------------------------- */
+
+
+	.navbar-nav {
+
+		padding: 0;
+
+		li a { padding: 20px } 
+	}
+
+
+
+}
