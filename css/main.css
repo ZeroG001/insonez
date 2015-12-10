@@ -1,4 +1,8 @@
-/* Note - Doing my best to use a mobile first approach for this site */
+/*
+
+Note - the CSS was built using a mobile first approach. so only the media 
+
+*/
 /* Variables
 --------------------------*/
 /* Color Scheme
@@ -16,17 +20,31 @@ body {
   max-width: 1000px;
   margin: 0px auto; }
 
+/* General Styles
+---------------------------- */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.center-wrap {
+  position: relative;
+  width: 960px;
+  margin: 0px auto; }
+
 /* Header & Navigation
 ---------------------------- */
+.navbar {
+  min-height: 100px; }
+
 .navbar-header {
   padding: 20px 0px 20px 20px; }
-
-.navbar-brand {
-  background-image: url("../img/insone_small.png");
-  background-size: 200px 60px;
-  background-repeat: no-repeat;
-  /*border: 1px solid black;*/
-  width: 200px; }
+  .navbar-header .navbar-brand {
+    background-image: url("../img/insone_small.png");
+    background-size: 200px 60px;
+    background-repeat: no-repeat;
+    /*border: 1px solid black;*/
+    width: 200px; }
 
 .navbar-nav {
   padding: 0;
@@ -34,13 +52,14 @@ body {
   .navbar-nav li a {
     padding: 20px; }
 
+/* Hamburger Manu */
 .nav-menu-button {
   position: absolute;
   right: 0;
   top: 0;
   box-sizing: border-box;
   width: 100px;
-  padding: 34px;
+  padding: 28px 34px;
   height: 100%;
   /*padding: 20px 0px 20px 20px;*/ }
   .nav-menu-button .menu-button-bar {
@@ -98,10 +117,10 @@ body {
   .main-content-section h2 {
     margin: 0;
     padding: 20px 0px; }
-  .main-content-section .section-img-left {
+  .main-content-section .content-section-img {
     display: block;
     border: 1px solid black;
-    width: 70%;
+    width: 100%;
     height: 300px;
     background-image: url("http://placehold.it/300x400");
     background-size: cover;
@@ -110,12 +129,10 @@ body {
 /* Section 1
 ------------------------ */
 .contact-call-wrapper {
-  display: block;
+  border: 1px solid black;
+  display: inline-block;
   position: relative;
-  width: 400px;
-  height: 400px;
-  margin: 0px auto;
-  overflow: hidden; }
+  margin: 0px auto; }
   .contact-call-wrapper .contact-header {
     position: absolute;
     top: 20px;
@@ -130,52 +147,62 @@ body {
     background-color: rgba(16, 111, 168, 0.9);
     z-index: 50;
     /*should always have the highest index */ }
-  .contact-call-wrapper .pulse-box-one,
-  .contact-call-wrapper .pulse-box-two,
-  .contact-call-wrapper .pulse-box-three {
-    position: absolute;
-    border: 1px solid black;
-    border-radius: 50%; }
-  .contact-call-wrapper .pulse-box-one {
-    width: 300px;
-    height: 300px;
-    right: calc(50% - 150px);
-    bottom: calc(50% - 150px);
-    z-index: 30; }
-  .contact-call-wrapper .pulse-box-two {
-    width: 200px;
-    height: 200px;
-    right: calc(50% - 100px);
-    bottom: calc(50% - 100px);
-    z-index: 20; }
-  .contact-call-wrapper .pulse-box-three {
-    width: 420px;
-    height: 420px;
-    right: calc(50% - 210px);
-    bottom: calc(50% - 210px);
-    z-index: 10; }
   .contact-call-wrapper #phone-image {
     text-align: center;
-    width: 100%;
-    height: 100%;
-    padding: 170px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%; }
+
+#contact-me-form {
+  margin: 0; }
 
 /* Section 2
 ------------------------ */
 /* Media Queries
 ----------------------------*/
-@media screen and (max-width: 784px) {
-  /* This will be applied after 728px */ }
+@media screen and (max-width: 768px) {
+  /* This will be applied after 768px */ }
 @media screen and (min-width: 768px) {
   /* This will be applied before 768px */
   /* Header & Navigation
   ---------------------------- */
+  .navbar-header {
+    float: left; }
+
   .navbar-nav {
     padding: 0;
-    display: inline; }
+    display: inline;
+    float: right; }
     .navbar-nav li a {
       padding: 40px 20px; }
 
   .nav-menu-button {
-    display: none; } }
+    display: none; }
+
+  /* Main Content
+  ----------------------------*/
+  .main-content-section .content-section-img {
+    display: inline;
+    float: left;
+    border: 1px solid black;
+    width: 50%;
+    height: 20px;
+    background-image: url("http://placehold.it/300x400");
+    background-size: cover;
+    background-position: center; }
+
+  .center-wrap .left-col,
+  .center-wrap .right-col {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0px 20px;
+    position: relative;
+    display: inline-block;
+    margin-right: -4px;
+    vertical-align: top;
+    height: 300px; }
+  .center-wrap .left-col {
+    float: left; }
+  .center-wrap .right-col {
+    float: right;
+    border: 1px solid black; } }
