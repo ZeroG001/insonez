@@ -1,3 +1,6 @@
+/* Note - Doing my best to use a mobile first approach for this site */
+
+
 
 /* Variables
 --------------------------*/
@@ -26,6 +29,7 @@ body {
 /* Bootstrap Override Styles 
 ---------------------------- */
 .container-fluid.fluid-custom {
+	position: relative;
 	max-width: 1000px;
 	margin: 0px auto;
 }
@@ -51,9 +55,30 @@ body {
 .navbar-nav {
 
 	padding: 0;
-
-	li a { padding: 40px 20px; }
+	display: none;
+	li a { padding: 20px } 
 }
+
+.nav-menu-button {
+	position: absolute;
+	right: 0;
+	top:0;
+	box-sizing: border-box;
+	width: 100px;
+	padding: 34px;
+	height: 100%;
+	/*padding: 20px 0px 20px 20px;*/
+
+	.menu-button-bar {
+		display: block;
+		background-color:$darkblue;
+		height: 5px;
+		margin: 5px 0px;
+	}
+}
+
+
+
 
 
 
@@ -65,7 +90,6 @@ body {
 	position: relative;
 	height: 650px;
 	width: 100%;
-
 	background-image: url('http://placehold.it/1100x600');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -229,22 +253,21 @@ body {
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
 /* This will be applied before 768px */
-
-
 
 	/* Header & Navigation
 	---------------------------- */
-
-
 	.navbar-nav {
 
 		padding: 0;
-
-		li a { padding: 20px } 
+		display: inline;
+		li a { padding: 40px 20px; }
 	}
 
 
+	.nav-menu-button {
+		display: none;
+	}
 
 }

@@ -1,3 +1,4 @@
+/* Note - Doing my best to use a mobile first approach for this site */
 /* Variables
 --------------------------*/
 /* Color Scheme
@@ -11,6 +12,7 @@ body {
 /* Bootstrap Override Styles 
 ---------------------------- */
 .container-fluid.fluid-custom {
+  position: relative;
   max-width: 1000px;
   margin: 0px auto; }
 
@@ -27,9 +29,25 @@ body {
   width: 200px; }
 
 .navbar-nav {
-  padding: 0; }
+  padding: 0;
+  display: none; }
   .navbar-nav li a {
-    padding: 40px 20px; }
+    padding: 20px; }
+
+.nav-menu-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  box-sizing: border-box;
+  width: 100px;
+  padding: 34px;
+  height: 100%;
+  /*padding: 20px 0px 20px 20px;*/ }
+  .nav-menu-button .menu-button-bar {
+    display: block;
+    background-color: #106fa8;
+    height: 5px;
+    margin: 5px 0px; }
 
 /* Banner Image
 ----------------------------*/
@@ -149,11 +167,15 @@ body {
 ----------------------------*/
 @media screen and (max-width: 784px) {
   /* This will be applied after 728px */ }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   /* This will be applied before 768px */
   /* Header & Navigation
   ---------------------------- */
   .navbar-nav {
-    padding: 0; }
+    padding: 0;
+    display: inline; }
     .navbar-nav li a {
-      padding: 20px; } }
+      padding: 40px 20px; }
+
+  .nav-menu-button {
+    display: none; } }
