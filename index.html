@@ -3,8 +3,12 @@
 		<meta http-equiv="content-type" content="text-html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" type="text/css" href="css/vendor/normalize.css">
-		<link rel="stylesheet" type="text/css" href="css/vendor/bootstrap/css/animate.css">
+		<!-- Thanks to SASS I only need to make one declaration here -->
+		<!--	
+			<link rel="stylesheet" type="text/css" href="css/vendor/normalize.css">
+			<link rel="stylesheet" type="text/css" href="css/vendor/bootstrap/css/animate.css"> 
+		-->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/vendor/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
@@ -48,17 +52,17 @@
 
 		<!-- Enter hero image content -->
 
-		<section class="banner-image">
+		<section class="banner">
 
-			<div class="banner-content-box-one"> 
+			<div class="animated bounceInLeft banner-content-box-one"> 
 				<p> Content fesfesf sef esfe s</p>
 			</div>
 
-			<div class="banner-content-box-two">
+			<div class="animated fadeInDown banner-content-box-two">
 				<p> Content </p>
 			</div>
 			
-			<div class="banner-content-box-three">
+			<div class="animated bounceInRight banner-content-box-three">
 				<p> Content </p>
 			</div>
 
@@ -70,7 +74,7 @@
 
 		<section class="main-content-section clearfix">
 
-			<div class="center-wrap">
+			<div class="center-wrap clearfix">
 
 				<div class="left-col">
 
@@ -83,8 +87,8 @@
 
 
 					<form id="contact-me-form">
-						<input type="text" placeholder="Enter your phone number"> </input>
-						<button>Give me a call <img src="img/svg/phone.svg" /> </button>
+						<input type="text" placeholder="your phone #"> </input>
+						<button>Give me a call <img class="button-image" src="img/svg/phone_blue.svg" /> </button>
 					</form>
 
 				</div>
@@ -102,7 +106,13 @@
 						<div class="pulse-box-two"> </div>
 						<div class="pulse-box-three"> </div>
 						-->
-						<img id="phone-image" src="img/svg/phone.svg" />
+						<div class="phone-image-wrap">
+							<img class="animated tada" id="phone-image" src="img/svg/phone_blue.svg" />
+						</div>
+						
+						<div class="contat-call-header">
+
+						</div>
 
 					</div>
 					
@@ -112,32 +122,109 @@
 			</div>
 
 
-
-
-
 		</section>
 
 
-		</section>
+
+		<section class="main-content-section clearfix">
+			
+			<div class="content-section-img img-left"> </div>
+
+			<div class="center-wrap ">
+
+	
+				<div class="right-col right-col-single">
+
+					<div class="services-content">
+						<h2> Lorem ipsum </h2>
+
+						<p> 
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit fringilla ligula, 
+							nec congue leo pharetra in. Quisque commodo vehicula justo, tincidunt vehicula elit consequat vel.
+						</p>
+					</div>
 
 
-		<section class="main-content-section">
+					<div class="services-button-wrapper">
 
-			<div class="section-img-center">
-				sdfsd
-			</div>
+						<div class="services-button">
+							<img src="img/svg/automobile.svg" alt="" />
+							<p> Auto </p>
+						</div>
 
-			<div class="container-fluid fluid-custom">
+						<div class="services-button">
+							<img src="img/svg/life_user.svg" alt="" />
+							<p> Life </p>
+						</div>
 
-				<div class="row">
+						<div class="services-button">
+							<img src="img/svg/renters_key.svg" alt="" />
+							<p> Renters </p>
+						</div>
 
-					<div class=" col-sm-offset-6 col-md-offset-6 col-lg-offset-6">
-						<h1> hello<h1>
+						<div class="services-button">
+							<img src="img/svg/office.svg" alt="" />
+							<p> Condo </p>
+						</div>
+
+
 					</div>
 
 				</div>
 
-			</div> 
+			</div>
+
+		</section>
+
+
+
+		<section class="main-content-section clearfix">
+			
+			<div class="content-section-img img-right"> </div>
+
+			<div class="center-wrap ">
+
+	
+				<div class="left-col left-col-single">
+
+					<div class="services-content">
+						<h2> Lorem ipsum </h2>
+
+						<p> 
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit fringilla ligula, 
+							nec congue leo pharetra in. Quisque commodo vehicula justo, tincidunt vehicula elit consequat vel.
+						</p>
+					</div>
+
+
+					<div class="services-button-wrapper">
+
+						<div class="services-button">
+							<img src="img/svg/automobile.svg" alt="" />
+							<p> Auto </p>
+						</div>
+
+						<div class="services-button">
+							<img src="img/svg/life_user.svg" alt="" />
+							<p> Life </p>
+						</div>
+
+						<div class="services-button">
+							<img src="img/svg/renters_key.svg" alt="" />
+							<p> Renters </p>
+						</div>
+
+						<div class="services-button">
+							<img src="img/svg/office.svg" alt="" />
+							<p> Condo </p>
+						</div>
+
+
+					</div>
+
+				</div>
+
+			</div>
 
 		</section>
 
