@@ -17,6 +17,7 @@ Note - the CSS was built using a mobile first approach. so only the media
 	$darkblue: #106FA8;
 	$cleardarkblue: rgba(16,111,168, 0.9);
 	$lightblue: #3D96CC;
+	$clearlightblue: rgba(97,189,244, 0.2);
 	$duskblue: #488DB6;
 	$orange: #F5AC49;
 	$action: #F55818;
@@ -30,6 +31,19 @@ Note - the CSS was built using a mobile first approach. so only the media
 
 /* SASS Mixins
 --------------------------------------------- */
+
+	/* Clearfix 
+	----------------------- */
+	@mixin clearfix {
+
+		&::after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+	}
+
 
 	/* Radial Gradient 
 	----------------------- */
@@ -51,6 +65,29 @@ Note - the CSS was built using a mobile first approach. so only the media
 		@-o-keyframes $name { @content }
 		@keyframes $name { @content }
 	}
+
+	/* Transitions 
+	--------------------------- */
+	 @mixin transition($options) {
+
+	 	-webkit-transition: $options;
+	 	-moz-transition: $options;
+	 	-o-transition: $options;
+	 	transition: $options;
+
+	 }
+
+	 /* Transform 
+	 -------------------------- */
+
+	 @mixin transform($options) {
+
+	 	-webkit-transform: $options ;
+	 	-moz-transform: $options ;
+	 	-ms-transform: $options ;
+	 	-o-transform: $options ;
+	 	transform: $options ;
+	 }
 
 
 	/* Font Sizes - Typography
@@ -92,10 +129,6 @@ Note - the CSS was built using a mobile first approach. so only the media
 	}
 
 
-
-
-
-
 /* ------------------ Main.sass ------------------ */
 
 
@@ -120,11 +153,6 @@ body {
 /* General Styles
 ---------------------------- */
 
-.clearfix::after {
-	content: "";
-	display: table;
-	clear: both;
-}
 
 .center-wrap {
 	position: relative;
@@ -156,11 +184,16 @@ body {
 }
 
 
-.navbar-nav {
 
+.navbar-wrap {
+/*mobile styles */
 	padding: 0;
-	display: none;
-	li a { padding: 20px } 
+	/*display: none;*/
+	position: absolute;
+	top: 100px;
+	right: 0;
+	display: inline-block;
+	li {display: block;}
 }
 
 
@@ -169,11 +202,17 @@ body {
 	position: absolute;
 	right: 0;
 	top:0;
-	box-sizing: border-box;
 	width: 100px;
 	padding: 28px 34px;
-	height: 100%;
+	height: 100px;
+	box-sizing: border-box;
 	/*padding: 20px 0px 20px 20px;*/
+
+	&:hover {
+		@include transition(0.4s ease);
+		cursor: pointer;
+		background-color: $clearlightblue;
+	}
 
 	.menu-button-bar {
 		display: block;
@@ -204,7 +243,7 @@ body {
 	.banner-content-box-one,
 	.banner-content-box-two,
 	.banner-content-box-three {
-		background-color: rgba(100,100,100,0.4);
+		background-color: rgba(100,100,100,0.7);
 		box-sizing: border-box;
 		padding: 20px;
 		display: inline-block;
@@ -219,16 +258,16 @@ body {
 	}
 
 	.banner-content-box-two {
-	    left: 15%;
 	    top: 215px;
 
-	    width: 400px;
+	    width: 100%;
 	    height: 300px;
 
 	    animation-delay: 1s;
 	}
 
 	.banner-content-box-three {
+		display: none;
 		height: auto;
 		width: 350px;
 		right: 0;
@@ -242,9 +281,12 @@ body {
 ----------------------------*/
 
 .main-content-section {
+
 	position: relative;
-	padding: 75px 20px;
+	padding: 20px 20px;
 	border-bottom: 1px solid gray;
+
+	@include clearfix;
 
 	.content-section-img {
 		display: block;
@@ -364,7 +406,7 @@ body {
 
 
 /* Section 2
------------------------- */
+---------------------------- */
 
 .services-button-wrapper {
 
@@ -374,7 +416,6 @@ body {
 	
 	img,
 	p {
-		background-color: #FAFAFA;
 		width: 100%;
 		text-align: center;
 	}
@@ -382,7 +423,7 @@ body {
 	img {
 		height: 110px;
 		width: 100%;
-		padding: 30px;
+		padding-top: 30px;
 		display: block;
 	}
 
@@ -390,8 +431,6 @@ body {
 		@include textContent;
 		padding-top: 30px;
 		text-align: center;
-		background-color: #FAFAFA;
-
 	}
 
 
@@ -406,10 +445,12 @@ body {
 		margin-left: -3px;
 	}
 
+	.button-content-wrap {
+		background-color: #FAFAFA;
+		padding: 0px 20px;
+	}
+
 }
-
-
-
 
 
 
@@ -418,10 +459,74 @@ body {
 
 
 
-/* ---------------------------- Break Point 1  --------------------------*/
-/* Rgular Size Device Widths - This will be applied after 
+/* ---------------------------- Break Point 2  --------------------------*/
+/* Rgular Size Device Widths - This will be aplied after 
 -------------------------------------------------------------------------- */
 @media screen and (min-width: 925px) {
+
+	/* Header and Navigation 
+	---------------------------------- */
+
+	.navbar-nav {
+	/*mobile styles */
+		display: inline;
+
+	}
+
+
+	/* Hamburger Manu */
+	.nav-menu-button {
+		display: none;
+	}
+
+	/* Banner Image
+	---------------------- */
+
+	.banner {
+
+		.banner-content-box-one,
+		.banner-content-box-two,
+		.banner-content-box-three {
+			background-color: rgba(100,100,100,0.7);
+			box-sizing: border-box;
+			padding: 20px;
+			display: inline-block;
+			position: absolute;
+		}
+
+
+		.banner-content-box-one {
+			top: 0;
+			left: 0;
+			height: auto;
+			width: 350px;
+		}
+
+		.banner-content-box-two {
+		    top: 215px;
+		    width: 400px;
+		    height: 300px;
+
+		    animation-delay: 1s;
+		}
+
+		.banner-content-box-three {
+			height: auto;
+			display: inline;
+			width: 350px;
+			right: 0;
+			bottom: 0; 
+		}
+
+	}
+
+
+
+
+	.main-content-section {
+		padding: 50px 10px;
+	}
+
 		.center-wrap {
 			
 		width: 850px;
@@ -456,14 +561,15 @@ body {
 }
 
 
-/* ---------------------------- Break Point 2  --------------------------*/
+/* ---------------------------- Break Point 3  --------------------------*/
 /* Rgular Size Device Widths - This will be applied after 
 ------------------------------------------------------------------------ */
+
 @media screen and (min-width: 1200px) {
 
 
 	/* General Styles (Wide) 
-	------------------------------*/
+	------------------------------ */
 
 
 	/* Header & Navigation (wide)
@@ -486,11 +592,14 @@ body {
 
 	.main-content-section {
 
+		padding: 75px 20px;
+
 		.content-section-img  {
 
 			width: 50%;
-			height: 400px;
-			background-image: url('../img/life_ins_img.png');
+			min-height: 420px;
+			/*background-image: url('../img/life_ins_img.png');*/
+			background-image: url('http://placehold.it/300x400');
 			background-size: cover;
 			background-position: center;
 		}

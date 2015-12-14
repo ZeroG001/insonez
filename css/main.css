@@ -3027,10 +3027,16 @@ th {
 ---------------------------- */
 /* SASS Mixins
 --------------------------------------------- */
+/* Clearfix 
+----------------------- */
 /* Radial Gradient 
 ----------------------- */
 /* Keyframe aniamtions 
 ----------------------------- */
+/* Transitions 
+--------------------------- */
+/* Transform 
+-------------------------- */
 /* Font Sizes - Typography
 ---------------------------------- */
 /* Helper Mixins 
@@ -3051,11 +3057,6 @@ body {
 
 /* General Styles
 ---------------------------- */
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both; }
-
 .center-wrap {
   position: relative;
   width: 100%;
@@ -3075,22 +3076,34 @@ body {
     /*border: 1px solid black;*/
     width: 200px; }
 
-.navbar-nav {
+.navbar-wrap {
+  /*mobile styles */
   padding: 0;
-  display: none; }
-  .navbar-nav li a {
-    padding: 20px; }
+  /*display: none;*/
+  position: absolute;
+  top: 100px;
+  right: 0;
+  display: inline-block; }
+  .navbar-wrap li {
+    display: block; }
 
 /* Hamburger Manu */
 .nav-menu-button {
   position: absolute;
   right: 0;
   top: 0;
-  box-sizing: border-box;
   width: 100px;
   padding: 28px 34px;
-  height: 100%;
+  height: 100px;
+  box-sizing: border-box;
   /*padding: 20px 0px 20px 20px;*/ }
+  .nav-menu-button:hover {
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+    transition: 0.4s ease;
+    cursor: pointer;
+    background-color: rgba(97, 189, 244, 0.2); }
   .nav-menu-button .menu-button-bar {
     display: block;
     background-color: #106fa8;
@@ -3113,7 +3126,7 @@ body {
   .banner .banner-content-box-one,
   .banner .banner-content-box-two,
   .banner .banner-content-box-three {
-    background-color: rgba(100, 100, 100, 0.4);
+    background-color: rgba(100, 100, 100, 0.7);
     box-sizing: border-box;
     padding: 20px;
     display: inline-block;
@@ -3124,12 +3137,12 @@ body {
     height: auto;
     width: 350px; }
   .banner .banner-content-box-two {
-    left: 15%;
     top: 215px;
-    width: 400px;
+    width: 100%;
     height: 300px;
     animation-delay: 1s; }
   .banner .banner-content-box-three {
+    display: none;
     height: auto;
     width: 350px;
     right: 0;
@@ -3139,8 +3152,12 @@ body {
 ----------------------------*/
 .main-content-section {
   position: relative;
-  padding: 75px 20px;
+  padding: 20px 20px;
   border-bottom: 1px solid gray; }
+  .main-content-section::after {
+    content: "";
+    display: table;
+    clear: both; }
   .main-content-section .content-section-img {
     display: block;
     position: relative;
@@ -3223,7 +3240,7 @@ body {
       display: none; }
 
 /* Section 2
------------------------- */
+---------------------------- */
 .services-button-wrapper {
   display: block;
   width: 100%;
@@ -3231,13 +3248,12 @@ body {
   box-sizing: border-box; }
   .services-button-wrapper img,
   .services-button-wrapper p {
-    background-color: #FAFAFA;
     width: 100%;
     text-align: center; }
   .services-button-wrapper img {
     height: 110px;
     width: 100%;
-    padding: 30px;
+    padding-top: 30px;
     display: block; }
   .services-button-wrapper p {
     line-height: 1.5;
@@ -3246,8 +3262,7 @@ body {
     padding-bottom: 30px;
     letter-spacing: 0.1rem;
     padding-top: 30px;
-    text-align: center;
-    background-color: #FAFAFA; }
+    text-align: center; }
   .services-button-wrapper .services-button {
     display: inline-block;
     vertical-align: top;
@@ -3255,13 +3270,56 @@ body {
     width: 25%;
     position: relative;
     margin-left: -3px; }
+  .services-button-wrapper .button-content-wrap {
+    background-color: #FAFAFA;
+    padding: 0px 20px; }
 
 /* Media Queries
 ----------------------------*/
-/* ---------------------------- Break Point 1  --------------------------*/
-/* Rgular Size Device Widths - This will be applied after 
+/* ---------------------------- Break Point 2  --------------------------*/
+/* Rgular Size Device Widths - This will be aplied after 
 -------------------------------------------------------------------------- */
 @media screen and (min-width: 925px) {
+  /* Header and Navigation 
+  ---------------------------------- */
+  .navbar-nav {
+    /*mobile styles */
+    display: inline; }
+
+  /* Hamburger Manu */
+  .nav-menu-button {
+    display: none; }
+
+  /* Banner Image
+  ---------------------- */
+  .banner .banner-content-box-one,
+  .banner .banner-content-box-two,
+  .banner .banner-content-box-three {
+    background-color: rgba(100, 100, 100, 0.7);
+    box-sizing: border-box;
+    padding: 20px;
+    display: inline-block;
+    position: absolute; }
+  .banner .banner-content-box-one {
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 350px; }
+  .banner .banner-content-box-two {
+    top: 215px;
+    width: 400px;
+    height: 300px;
+    animation-delay: 1s; }
+  .banner .banner-content-box-three {
+    height: auto;
+    display: inline;
+    width: 350px;
+    right: 0;
+    bottom: 0; }
+
+  .main-content-section {
+    padding: 50px 10px; }
+
   .center-wrap {
     width: 850px; }
     .center-wrap .left-col,
@@ -3281,12 +3339,12 @@ body {
       width: 100%; }
     .center-wrap .right-col.right-col-single {
       width: 100%; } }
-/* ---------------------------- Break Point 2  --------------------------*/
+/* ---------------------------- Break Point 3  --------------------------*/
 /* Rgular Size Device Widths - This will be applied after 
 ------------------------------------------------------------------------ */
 @media screen and (min-width: 1200px) {
   /* General Styles (Wide) 
-  ------------------------------*/
+  ------------------------------ */
   /* Header & Navigation (wide)
   ---------------------------- */
   .navbar-header {
@@ -3304,24 +3362,27 @@ body {
 
   /* Main Content (Wide)
   ----------------------------*/
-  .main-content-section .content-section-img {
-    width: 50%;
-    height: 400px;
-    background-image: url("../img/life_ins_img.png");
-    background-size: cover;
-    background-position: center; }
-  .main-content-section .content-section-img.img-left {
-    position: relative;
-    display: inline;
-    top: 0px;
-    left: -20px;
-    float: left; }
-  .main-content-section .content-section-img.img-right {
-    position: relative;
-    display: inline;
-    top: 0px;
-    right: -20px;
-    float: right; }
+  .main-content-section {
+    padding: 75px 20px; }
+    .main-content-section .content-section-img {
+      width: 50%;
+      min-height: 420px;
+      /*background-image: url('../img/life_ins_img.png');*/
+      background-image: url("http://placehold.it/300x400");
+      background-size: cover;
+      background-position: center; }
+    .main-content-section .content-section-img.img-left {
+      position: relative;
+      display: inline;
+      top: 0px;
+      left: -20px;
+      float: left; }
+    .main-content-section .content-section-img.img-right {
+      position: relative;
+      display: inline;
+      top: 0px;
+      right: -20px;
+      float: right; }
 
   .center-wrap {
     width: 1100px; }
