@@ -3031,16 +3031,87 @@ th {
 ----------------------- */
 /* Radial Gradient 
 ----------------------- */
-/* Keyframe aniamtions 
------------------------------ */
 /* Transitions 
 --------------------------- */
 /* Transform 
 -------------------------- */
+/* Keyframe aniamtions 
+----------------------------------------------------- */
+/* Animation properties */
+/* Helper Animations */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.95, 0.95);
+    -moz-transform: scale(0.95, 0.95);
+    -ms-transform: scale(0.95, 0.95);
+    -o-transform: scale(0.95, 0.95);
+    transform: scale(0.95, 0.95); }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.95, 0.95);
+    -moz-transform: scale(0.95, 0.95);
+    -ms-transform: scale(0.95, 0.95);
+    -o-transform: scale(0.95, 0.95);
+    transform: scale(0.95, 0.95); }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.95, 0.95);
+    -moz-transform: scale(0.95, 0.95);
+    -ms-transform: scale(0.95, 0.95);
+    -o-transform: scale(0.95, 0.95);
+    transform: scale(0.95, 0.95); }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.95, 0.95);
+    -moz-transform: scale(0.95, 0.95);
+    -ms-transform: scale(0.95, 0.95);
+    -o-transform: scale(0.95, 0.95);
+    transform: scale(0.95, 0.95); }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+
 /* Font Sizes - Typography
 ---------------------------------- */
 /* Helper Mixins 
 ----------------------- */
+/* input items that are thin and use the same properties */
 /* ------------------ Main.sass ------------------ */
 body {
   padding-top: 101px;
@@ -3061,6 +3132,10 @@ body {
   position: relative;
   width: 100%;
   margin: 0px auto; }
+  .center-wrap::after {
+    content: "";
+    display: table;
+    clear: both; }
 
 /* Header & Navigation
 ---------------------------- */
@@ -3070,7 +3145,8 @@ body {
 .navbar-header {
   padding: 20px 0px 20px 20px; }
   .navbar-header .navbar-brand {
-    background-image: url("../img/insone_small.png");
+    /*background-image: url('../img/insone_small.png');*/
+    background-image: url("http://placehold.it/100x300");
     background-size: 200px 60px;
     background-repeat: no-repeat;
     /*border: 1px solid black;*/
@@ -3080,12 +3156,14 @@ body {
   /*mobile styles */
   padding: 0;
   background-color: #f8f8f8;
+  z-index: -1000;
   /*display: none;*/
   position: absolute;
   top: 100px;
   width: 100%;
   right: 0;
-  display: inline-block; }
+  /*display: inline-block;*/
+  display: none; }
   .navbar-wrap li {
     display: block;
     text-align: center;
@@ -3114,45 +3192,72 @@ body {
     -moz-transition: 0.4s ease;
     -o-transition: 0.4s ease;
     transition: 0.4s ease; }
+  .nav-menu-button .menu-button-bar:nth-child(1) {
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
+  .nav-menu-button .menu-button-bar:nth-child(3) {
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); }
   .nav-menu-button:hover {
+    /*@extend .nav-menu-active;*/
+    cursor: pointer;
+    background-color: rgba(97, 189, 244, 0.3); }
+
+.nav-menu-active {
+  -webkit-transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  -o-transition: 0.4s ease;
+  transition: 0.4s ease; }
+  .nav-menu-active .menu-button-bar:nth-child(1) {
     -webkit-transition: 0.4s ease;
     -moz-transition: 0.4s ease;
     -o-transition: 0.4s ease;
     transition: 0.4s ease;
-    cursor: pointer;
-    background-color: rgba(97, 189, 244, 0.2); }
-    .nav-menu-button:hover .menu-button-bar:nth-child(1) {
-      top: 10px;
-      -webkit-transition: 0.4s ease;
-      -moz-transition: 0.4s ease;
-      -o-transition: 0.4s ease;
-      transition: 0.4s ease;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg); }
-    .nav-menu-button:hover .menu-button-bar:nth-child(2) {
-      opacity: 0;
-      -webkit-transition: 0.4s ease;
-      -moz-transition: 0.4s ease;
-      -o-transition: 0.4s ease;
-      transition: 0.4s ease; }
-    .nav-menu-button:hover .menu-button-bar:nth-child(3) {
-      -webkit-transition: 0.4s ease;
-      -moz-transition: 0.4s ease;
-      -o-transition: 0.4s ease;
-      transition: 0.4s ease;
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-      bottom: 10px; }
+    -webkit-transform: translate(0px, 10px) rotate(-135deg);
+    -moz-transform: translate(0px, 10px) rotate(-135deg);
+    -ms-transform: translate(0px, 10px) rotate(-135deg);
+    -o-transform: translate(0px, 10px) rotate(-135deg);
+    transform: translate(0px, 10px) rotate(-135deg); }
+  .nav-menu-active .menu-button-bar:nth-child(2) {
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+    transition: 0.4s ease;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0); }
+  .nav-menu-active .menu-button-bar:nth-child(3) {
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+    transition: 0.4s ease;
+    -webkit-transform: translate(0px, -10px) rotate(135deg);
+    -moz-transform: translate(0px, -10px) rotate(135deg);
+    -ms-transform: translate(0px, -10px) rotate(135deg);
+    -o-transform: translate(0px, -10px) rotate(135deg);
+    transform: translate(0px, -10px) rotate(135deg); }
+  .nav-menu-active + .navbar-wrap {
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+    transition: 0.4s ease;
+    -webkit-animation: fadeIn 0.4s ease;
+    -moz-aniamtion: fadeIn 0.4s ease;
+    -o-animation: fadeIn 0.4s ease;
+    animation: fadeIn 0.4s ease;
+    display: inline-block; }
 
 /* Banner Image
 ----------------------------*/
-.banner {
+.banner, .banner-section {
   display: block;
   position: relative;
   height: 650px;
@@ -3163,31 +3268,92 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   box-sizing: border-box; }
-  .banner .banner-content-box-one,
+  .banner .banner-content-box-one, .banner-section .banner-content-box-one,
   .banner .banner-content-box-two,
-  .banner .banner-content-box-three {
-    background-color: rgba(100, 100, 100, 0.7);
+  .banner-section .banner-content-box-two,
+  .banner .banner-content-box-three,
+  .banner-section .banner-content-box-three {
+    background-color: rgba(72, 141, 182, 0.9);
     box-sizing: border-box;
-    padding: 20px;
+    padding: 20px 20px;
     display: inline-block;
-    position: absolute; }
-  .banner .banner-content-box-one {
+    position: absolute;
+    color: white; }
+  .banner .banner-content-box-one, .banner-section .banner-content-box-one {
     top: 0;
     left: 0;
     height: auto;
-    width: 350px; }
-  .banner .banner-content-box-two {
+    width: 350px;
+    text-align: right; }
+  .banner .banner-content-box-two, .banner-section .banner-content-box-two {
+    text-align: center;
     top: 215px;
-    left: 20%;
     width: 100%;
     height: 300px;
     animation-delay: 1s; }
-  .banner .banner-content-box-three {
+    .banner .banner-content-box-two h1, .banner-section .banner-content-box-two h1 {
+      color: #106fa8;
+      font-size: 3rem;
+      margin: 0;
+      padding: 30px 0px;
+      color: white; }
+    .banner .banner-content-box-two p, .banner-section .banner-content-box-two p {
+      line-height: 1.5;
+      font-size: 1.5rem;
+      margin: 0;
+      padding-bottom: 30px;
+      letter-spacing: 0.1rem; }
+    .banner .banner-content-box-two button, .banner-section .banner-content-box-two button {
+      padding: 15px;
+      font-size: 1.5rem;
+      line-height: 1;
+      margin: 0;
+      background-color: transparent;
+      border: 1px solid #106fa8;
+      color: #106fa8;
+      box-sizing: border-box; }
+      .banner .banner-content-box-two button .button-image, .banner-section .banner-content-box-two button .button-image {
+        height: 1.5rem;
+        width: 2rem;
+        margin-left: 5px; }
+  .banner .banner-content-box-three, .banner-section .banner-content-box-three {
     display: none;
     height: auto;
     width: 350px;
     right: 0;
     bottom: 0; }
+    .banner .banner-content-box-three h2, .banner-section .banner-content-box-three h2 {
+      color: #106fa8;
+      font-size: 3rem;
+      margin: 0;
+      padding: 30px 0px;
+      color: white; }
+    .banner .banner-content-box-three p, .banner-section .banner-content-box-three p {
+      line-height: 1.5;
+      font-size: 1.5rem;
+      margin: 0;
+      padding-bottom: 30px;
+      letter-spacing: 0.1rem; }
+    .banner .banner-content-box-three button, .banner-section .banner-content-box-three button {
+      padding: 15px;
+      font-size: 1.5rem;
+      line-height: 1;
+      margin: 0;
+      background-color: transparent;
+      border: 1px solid #106fa8;
+      color: #106fa8;
+      box-sizing: border-box; }
+      .banner .banner-content-box-three button .button-image, .banner-section .banner-content-box-three button .button-image {
+        height: 1.5rem;
+        width: 2rem;
+        margin-left: 5px; }
+
+.banner-section {
+  background-image: url("../img/sky-dock-people-ocean.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px; }
 
 /* Main Content
 ----------------------------*/
@@ -3206,7 +3372,8 @@ body {
     height: 300px;
     background-image: url("http://placehold.it/300x400");
     background-size: cover;
-    background-position: center; }
+    background-position: center;
+    background-repeat: no-repeat; }
   .main-content-section .left-col,
   .main-content-section .right-col {
     display: block;
@@ -3226,8 +3393,8 @@ body {
       padding-bottom: 30px;
       letter-spacing: 0.1rem; }
 
-/* Section 1
------------------------- */
+/* Section 1 - Call and Contact
+---------------------------------------- */
 .contact-call-wrapper {
   position: relative;
   display: block;
@@ -3252,36 +3419,49 @@ body {
     height: 300px;
     padding: 80px;
     margin: 0px auto;
-    border-radius: 50%;
-    animation-iteration-count: infinite;
-    -webkit-animation-duration: 15s; }
+    /* There is a glitch with the animation fix it */
+    -moz-animation-duration: 15s;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite; }
 
 #contact-me-form {
   position: relative;
   margin-bottom: 10px;
   height: 50px; }
   #contact-me-form input, #contact-me-form button {
-    display: inline-block;
-    vertical-align: top;
-    width: 49%;
-    height: 100%;
     padding: 15px;
     font-size: 1.5rem;
     line-height: 1;
     margin: 0;
+    background-color: transparent;
     border: 1px solid #106fa8;
     color: #106fa8;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    height: 100%; }
+    #contact-me-form input .button-image, #contact-me-form button .button-image {
+      height: 1.5rem;
+      width: 2rem;
+      margin-left: 5px; }
   #contact-me-form button {
     background-color: white; }
     #contact-me-form button .button-image {
-      height: 2.0rem;
-      width: 2.0rem;
-      margin-left: 10px;
       display: none; }
 
-/* Section 2
+/* Section 2 - Services
 ---------------------------- */
+.services-content h3 {
+  display: block;
+  width: 150px;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  border-bottom: 4px solid #106fa8;
+  padding-bottom: 5px; }
+
 .services-button-wrapper {
   display: block;
   width: 100%;
@@ -3311,12 +3491,80 @@ body {
     width: 25%;
     position: relative;
     margin-left: -3px; }
+    .services-button-wrapper .services-button:hover {
+      cursor: pointer;
+      background-color: rgba(97, 189, 244, 0.3);
+      -webkit-transition: 0.4s ease;
+      -moz-transition: 0.4s ease;
+      -o-transition: 0.4s ease;
+      transition: 0.4s ease; }
   .services-button-wrapper .button-content-wrap {
     background-color: #FAFAFA;
     padding: 0px 20px; }
 
+/* Section 3 - Carriers
+---------------------------------------- */
+.carrier-wrap {
+  display: block; }
+  .carrier-wrap .carrier-image {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    margin-left: -4px;
+    padding: 3% 6%; }
+    .carrier-wrap .carrier-image img {
+      display: block;
+      position: relative;
+      max-width: 100%;
+      height: atuo;
+      margin: 0px auto; }
+
+/* Section 4 - contact
+---------------------------------------- */
+.contact-wrap .contact-item {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top; }
+  .contact-wrap .contact-item button {
+    padding: 15px;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin: 0;
+    background-color: transparent;
+    border: 1px solid #106fa8;
+    color: #106fa8;
+    box-sizing: border-box; }
+    .contact-wrap .contact-item button .button-image {
+      height: 1.5rem;
+      width: 2rem;
+      margin-left: 5px; }
+
 /* Media Queries
 ----------------------------*/
+/* ---------------------------- Break Point 1  --------------------------*/
+/* Rgular Size Device Widths - This will be aplied after 
+-------------------------------------------------------------------------- */
+@media screen and (min-width: 625px) {
+  .center-wrap {
+    width: 620px; }
+    .center-wrap .left-col,
+    .center-wrap .right-col {
+      box-sizing: border-box;
+      width: 50%;
+      padding: 0px 20px;
+      position: relative;
+      display: inline-block;
+      margin-right: -4px;
+      vertical-align: top; }
+    .center-wrap .left-col {
+      float: left; }
+    .center-wrap .right-col {
+      float: right; }
+    .center-wrap .left-col.left-col-single {
+      width: 100%; }
+    .center-wrap .right-col.right-col-single {
+      width: 100%; } }
 /* ---------------------------- Break Point 2  --------------------------*/
 /* Rgular Size Device Widths - This will be aplied after 
 -------------------------------------------------------------------------- */
@@ -3341,31 +3589,32 @@ body {
 
   /* Banner Image
   ---------------------- */
-  .banner .banner-content-box-one,
-  .banner .banner-content-box-two,
-  .banner .banner-content-box-three {
-    background-color: rgba(100, 100, 100, 0.7);
-    box-sizing: border-box;
-    padding: 20px;
-    display: inline-block;
-    position: absolute; }
-  .banner .banner-content-box-one {
-    top: 0;
-    left: 0;
-    height: auto;
-    width: 350px; }
-  .banner .banner-content-box-two {
-    top: 215px;
-    left: 10%;
-    width: 400px;
-    height: 300px;
-    animation-delay: 1s; }
-  .banner .banner-content-box-three {
-    height: auto;
-    display: inline;
-    width: 350px;
-    right: 0;
-    bottom: 0; }
+  .banner, .banner-section {
+    /*
+    .banner-content-box-one {
+    	top: 0;
+    	left: 0;
+    	height: auto;
+    	width: 350px;
+    }*/ }
+    .banner .banner-content-box-one, .banner-section .banner-content-box-one,
+    .banner .banner-content-box-three,
+    .banner-section .banner-content-box-three {
+      box-sizing: border-box;
+      padding: 20px;
+      display: inline-block;
+      position: absolute; }
+    .banner .banner-content-box-two, .banner-section .banner-content-box-two {
+      top: 215px;
+      width: 400px;
+      height: 300px;
+      animation-delay: 1s; }
+    .banner .banner-content-box-three, .banner-section .banner-content-box-three {
+      height: auto;
+      display: inline;
+      width: 350px;
+      right: 0;
+      bottom: 0; }
 
   .main-content-section {
     padding: 50px 10px; }
@@ -3388,7 +3637,54 @@ body {
     .center-wrap .left-col.left-col-single {
       width: 100%; }
     .center-wrap .right-col.right-col-single {
-      width: 100%; } }
+      width: 100%; }
+
+  /* Section - Carriers
+  ---------------------------------------- */
+  .carrier-wrap {
+    display: block;
+    padding: 0px 20px; }
+    .carrier-wrap h3 {
+      display: block;
+      width: 150px;
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
+      font-weight: bold;
+      border-bottom: 4px solid #106fa8;
+      padding-bottom: 5px; }
+    .carrier-wrap .carrier-image {
+      position: relative;
+      display: inline-block;
+      width: 33%;
+      margin-left: -3px;
+      padding: 25px 35px; }
+      .carrier-wrap .carrier-image img {
+        display: block;
+        position: relative;
+        max-width: 100%;
+        height: atuo;
+        margin: 0px auto; }
+
+  /* Section - contact
+  ---------------------------------------- */
+  .contact-wrap .contact-item {
+    width: 33%;
+    margin-left: -4px;
+    padding: 0px 10px;
+    vertical-align: top; }
+    .contact-wrap .contact-item button {
+      padding: 15px;
+      font-size: 1.5rem;
+      line-height: 1;
+      margin: 0;
+      background-color: transparent;
+      border: 1px solid #106fa8;
+      color: #106fa8;
+      box-sizing: border-box; }
+      .contact-wrap .contact-item button .button-image {
+        height: 1.5rem;
+        width: 2rem;
+        margin-left: 5px; } }
 /* ---------------------------- Break Point 3  --------------------------*/
 /* Rgular Size Device Widths - This will be applied after 
 ------------------------------------------------------------------------ */
@@ -3425,7 +3721,8 @@ body {
       /*background-image: url('../img/life_ins_img.png');*/
       background-image: url("http://placehold.it/300x400");
       background-size: cover;
-      background-position: center; }
+      background-position: center;
+      background-repeat: no-repeat; }
     .main-content-section .content-section-img.img-left {
       position: relative;
       display: inline;
@@ -3448,7 +3745,7 @@ body {
       padding: 0px 20px;
       position: relative;
       display: inline-block;
-      margin-right: -4px;
+      margin-right: -3px;
       vertical-align: top;
       height: 300px; }
     .center-wrap .left-col {
@@ -3474,7 +3771,14 @@ body {
     #contact-me-form input {
       font-size: 1.5rem; }
     #contact-me-form button .button-image {
-      display: inline; } }
+      display: inline; }
+
+  /* Section 3 - Carriers
+  ---------------------------------------- */
+  .carrier-wrap {
+    display: block; }
+    .carrier-wrap .carrier-image {
+      padding: 40px 50px; } }
 /* Media query end */
 /*@media screen and (min-widh)*/
 /* Animations
